@@ -20,3 +20,15 @@ huggingface-cli download microsoft/Phi-3-mini-4k-instruct-onnx --include cpu_and
 
 huggingface-cli download microsoft/Phi-3-mini-4k-instruct-onnx --include directml/directml-int4-awq-block-128/* --local-dir Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/
 ```
+
+## Restore
+
+```
+dotnet restore
+dotnet build
+dotnet run
+```
+
+## Notes
+
+DirectML models currently funky.
