@@ -11,7 +11,7 @@ Model: Phi-3-mini-4k-instruct-onnx
 
 Model variants:
 * CPU-based
-* DirectML-accelerated (for use on Windows Subsystem for Linux)
+* DirectML-accelerated (for use on Windows and WIndows Subsystem for Linux)
 
 ## Download models and copy into place:
 
@@ -31,4 +31,4 @@ dotnet run
 
 ## Notes
 
-DirectML models currently funky.
+DirectML models currently throwing a message about DML not being available. Can be fixed by setting runtime target to windows-x64 but working how to address when multiple targets are listed.
