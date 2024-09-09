@@ -2,16 +2,18 @@
 
 Simple .NET LLM chat application.
 
+![image](https://github.com/user-attachments/assets/e75189ba-cbb7-4e18-b58a-1a99703d48cb)
+
 Uses:
 * .NET 8
-* GTK#
-* ONNX Runtime GenAI
+* GTK# for Linux and Windows (bundles GTK# Runtime for Windows)
+* [ONNX Runtime GenAI](https://github.com/microsoft/onnxruntime-genai)
 
 Model: Phi-3-mini-4k-instruct-onnx
 
 Model variants:
 * CPU-based
-* DirectML-accelerated (for use on Windows and WIndows Subsystem for Linux)
+* DirectML-accelerated (for use on Windows and Windows Subsystem for Linux)
 
 ## Download models and copy into place:
 
@@ -31,4 +33,4 @@ dotnet run
 
 ## Notes
 
-DirectML models currently throwing a message about DML not being available. Can be fixed by setting runtime target to windows-x64 but working how to address when multiple targets are listed.
+DirectML models currently throwing a message about DML not being available. Can be fixed by setting runtime target in csproj to win-x64 (see https://github.com/microsoft/onnxruntime-genai/issues/862) but working on how to address when multiple targets are listed.
