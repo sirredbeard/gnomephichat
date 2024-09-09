@@ -5,12 +5,63 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+    <PublishAot>true</PublishAot>
+    <PublishTrimmed>true</PublishTrimmed>
+    <OptimizationPreference>Speed</OptimizationPreference>    
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="GtkSharp" Version="3.24.24.95" />
+    <PackageReference Include="GtkSharp.Win32" Version="3.1.2" />
     <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.19.2" />
     <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.4.0" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.DirectML" Version="0.4.0" />
+  </ItemGroup>
+
+    <ItemGroup>
+    <None Update="runtimes\win\native\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/phi3-mini-4k-instruct-cpu-int4-rtn-block-32-acc-level-4.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/phi3-mini-4k-instruct-cpu-int4-rtn-block-32-acc-level-4.onnx.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/genai_config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/tokenizer_config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/tokenizer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+      <None Update="Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+       <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/model.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/model.onnx.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/genai_config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/tokenizer_config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/tokenizer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+      <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None> 
   </ItemGroup>
 
 </Project>
