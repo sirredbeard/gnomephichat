@@ -17,6 +17,7 @@
     <PackageReference Include="GtkSharp.Win32" Version="3.1.2" />
     <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.19.2" />
     <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.4.0" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Cuda" Version="0.4.0" />
     <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.DirectML" Version="0.4.0" />
   </ItemGroup>
 
@@ -44,7 +45,7 @@
       <None Update="Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/LICENSE">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-       <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/model.onnx">
+    <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/model.onnx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/model.onnx.data">
@@ -61,7 +62,26 @@
     </None>
       <None Update="Phi-3-mini-4k-instruct-onnx/directml-int4-awq-block-128/LICENSE">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None> 
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cuda-int4-rtn-block-32/phi3-mini-4k-instruct-cuda-int4-rtn-block-32.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cuda-int4-rtn-block-32/phi3-mini-4k-instruct-cuda-int4-rtn-block-32.onnx.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cuda-int4-rtn-block-32/genai_config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cuda-int4-rtn-block-32/tokenizer_config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Phi-3-mini-4k-instruct-onnx/cuda-int4-rtn-block-32/tokenizer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+      <None Update="Phi-3-mini-4k-instruct-onnx/cuda-int4-rtn-block-32/LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+
   </ItemGroup>
 
 </Project>
