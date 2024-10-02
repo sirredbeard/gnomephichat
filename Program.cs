@@ -25,7 +25,7 @@ class Program
 
         clearButton.Clicked += (sender, e) => textView.Buffer.Text = string.Empty;
 
-        var comboBox = new ComboBox(new string[] { "CPU-powered Phi-3-mini" });
+        var comboBox = new ComboBox(new string[] { "Phi-3-mini" });
         comboBox.Active = 0; // Default to the first option
 
         headerBox.PackStart(comboBox, false, false, 0);

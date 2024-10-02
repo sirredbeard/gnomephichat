@@ -13,7 +13,9 @@ Uses:
 ## Download model and copy into place:
 
 ```
-huggingface-cli download microsoft/Phi-3-mini-4k-instruct-onnx --include cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/* --local-dir Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/
+huggingface-cli download microsoft/Phi-3-mini-4k-instruct-onnx --include cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/* --local-dir temp-dir
+mv temp-dir/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/* Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/
+rm temp-dir
 
 ```
 
