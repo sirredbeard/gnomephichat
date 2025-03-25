@@ -9,13 +9,16 @@ Uses:
 * GTK# for Linux and Windows (bundles GTK# Runtime for Windows)
 * [ONNX Runtime GenAI](https://github.com/microsoft/onnxruntime-genai)
 
+Supports:
+* Windows on x64
+* Windows on Arm via emulation, due to a limitation in GTK#
+* Linux on x64
+* Linux on Arm, requires building ONNX Runtime GenAI from source
 
-## Download model and copy into place:
+## Download model and data:
 
 ```
-huggingface-cli download microsoft/Phi-3-mini-4k-instruct-onnx --include cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/* --local-dir temp-dir
-mv temp-dir/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/* Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4/
-rm temp-dir
+huggingface-cli download microsoft/Phi-3-mini-4k-instruct-onnx --include cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/* --local-dir Phi-3-mini-4k-instruct-onnx
 
 ```
 

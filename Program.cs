@@ -141,6 +141,6 @@ class Program
 
     static string GetModelPath(int selectedIndex)
     {
-        return Path.Combine(AppContext.BaseDirectory, @"Phi-3-mini-4k-instruct-onnx/cpu-int4-rtn-block-32-acc-level-4");
+        return Path.Combine(AppContext.BaseDirectory, @"Phi-3-mini-4k-instruct-onnx/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4");
     }
 }
