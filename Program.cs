@@ -74,9 +74,9 @@ class Program
             modelPath = GetModelPath(comboBox.Active);
             try
             {
-                var sessionOptions = new SessionOptions();
-                sessionOptions.AppendExecutionProvider_DML(); // Enable DirectML
-                var inferenceSession = new InferenceSession(modelPath, sessionOptions);
+                //var sessionOptions = new SessionOptions();
+                //sessionOptions.AppendExecutionProvider_DML(); // Enable DirectML
+                //var inferenceSession = new InferenceSession(modelPath, sessionOptions);
                 model = new Model(modelPath);
                 tokenizer = new Tokenizer(model);
                 textView.Buffer.Text += $"Model switched to: CPU-powered Phi-3-mini\n";
@@ -145,6 +145,6 @@ class Program
 
     static string GetModelPath(int selectedIndex)
     {
-        return Path.Combine(AppContext.BaseDirectory, @"Phi-3-mini-4k-instruct-onnx/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4");
+        return Path.Combine(AppContext.BaseDirectory, @"Phi-4-mini-instruct-onnx/gpu/gpu-int4-rtn-block-32/");
     }
 }

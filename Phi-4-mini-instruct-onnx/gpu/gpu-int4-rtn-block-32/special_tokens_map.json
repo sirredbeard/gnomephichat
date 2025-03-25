@@ -1,6 +1,6 @@
 {
   "bos_token": {
-    "content": "<s>",
+    "content": "<|endoftext|>",
     "lstrip": false,
     "normalized": false,
     "rstrip": false,
@@ -21,7 +21,7 @@
     "single_word": false
   },
   "unk_token": {
-    "content": "<unk>",
+    "content": "<|endoftext|>",
     "lstrip": false,
     "normalized": false,
     "rstrip": false,

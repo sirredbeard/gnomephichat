@@ -1,18 +1,23 @@
 {
     "model": {
-        "bos_token_id": 1,
-        "context_length": 4096,
+        "bos_token_id": 199999,
+        "context_length": 131072,
         "decoder": {
             "session_options": {
                 "log_id": "onnxruntime-genai",
-                "provider_options": []
+                "provider_options": [
+                    {
+                        "dml": {}
+                    }
+                ]
             },
-            "filename": "phi3-mini-4k-instruct-cpu-int4-rtn-block-32-acc-level-4.onnx",
-            "head_size": 96,
+            "filename": "model.onnx",
+            "head_size": 128,
             "hidden_size": 3072,
             "inputs": {
                 "input_ids": "input_ids",
                 "attention_mask": "attention_mask",
+                "position_ids": "position_ids",
                 "past_key_names": "past_key_values.%d.key",
                 "past_value_names": "past_key_values.%d.value"
             },
@@ -21,25 +26,24 @@
                 "present_key_names": "present.%d.key",
                 "present_value_names": "present.%d.value"
             },
-            "num_attention_heads": 32,
+            "num_attention_heads": 24,
             "num_hidden_layers": 32,
-            "num_key_value_heads": 32
+            "num_key_value_heads": 8
         },
         "eos_token_id": [
-            32000,
-            32001,
-            32007
+            200020,
+            199999
         ],
-        "pad_token_id": 32000,
+        "pad_token_id": 199999,
         "type": "phi3",
-        "vocab_size": 32064
+        "vocab_size": 200064
     },
     "search": {
         "diversity_penalty": 0.0,
         "do_sample": false,
         "early_stopping": true,
         "length_penalty": 1.0,
-        "max_length": 2048,
+        "max_length": 131072,
         "min_length": 0,
         "no_repeat_ngram_size": 0,
         "num_beams": 1,

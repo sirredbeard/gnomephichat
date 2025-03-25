@@ -1,32 +1,9 @@
 {
-  "add_bos_token": true,
+  "add_bos_token": false,
   "add_eos_token": false,
+  "add_prefix_space": false,
   "added_tokens_decoder": {
-    "0": {
-      "content": "<unk>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": false,
-      "single_word": false,
-      "special": true
-    },
-    "1": {
-      "content": "<s>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": false,
-      "single_word": false,
-      "special": true
-    },
-    "2": {
-      "content": "</s>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": false
-    },
-    "32000": {
+    "199999": {
       "content": "<|endoftext|>",
       "lstrip": false,
       "normalized": false,
@@ -34,7 +11,15 @@
       "single_word": false,
       "special": true
     },
-    "32001": {
+    "200018": {
+      "content": "<|endofprompt|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "200019": {
       "content": "<|assistant|>",
       "lstrip": false,
       "normalized": false,
@@ -42,47 +27,7 @@
       "single_word": false,
       "special": true
     },
-    "32002": {
-      "content": "<|placeholder1|>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": true
-    },
-    "32003": {
-      "content": "<|placeholder2|>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": true
-    },
-    "32004": {
-      "content": "<|placeholder3|>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": true
-    },
-    "32005": {
-      "content": "<|placeholder4|>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": true
-    },
-    "32006": {
-      "content": "<|system|>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": true
-    },
-    "32007": {
+    "200020": {
       "content": "<|end|>",
       "lstrip": false,
       "normalized": false,
@@ -90,24 +35,64 @@
       "single_word": false,
       "special": true
     },
-    "32008": {
-      "content": "<|placeholder5|>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": true
-    },
-    "32009": {
-      "content": "<|placeholder6|>",
-      "lstrip": false,
-      "normalized": false,
-      "rstrip": true,
-      "single_word": false,
-      "special": true
-    },
-    "32010": {
+    "200021": {
       "content": "<|user|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": true,
+      "single_word": false,
+      "special": true
+    },
+    "200022": {
+      "content": "<|system|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": true,
+      "single_word": false,
+      "special": true
+    },
+    "200023": {
+      "content": "<|tool|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": true,
+      "single_word": false,
+      "special": false
+    },
+    "200024": {
+      "content": "<|/tool|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": true,
+      "single_word": false,
+      "special": false
+    },
+    "200025": {
+      "content": "<|tool_call|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": true,
+      "single_word": false,
+      "special": false
+    },
+    "200026": {
+      "content": "<|/tool_call|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": true,
+      "single_word": false,
+      "special": false
+    },
+    "200027": {
+      "content": "<|tool_response|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": true,
+      "single_word": false,
+      "special": false
+    },
+    "200028": {
+      "content": "<|tag|>",
       "lstrip": false,
       "normalized": false,
       "rstrip": true,
@@ -115,16 +100,13 @@
       "special": true
     }
   },
-  "bos_token": "<s>",
-  "chat_template": "{{ bos_token }}{% for message in messages %}{% if (message['role'] == 'user') %}{{'<|user|>' + '\n' + message['content'] + '<|end|>' + '\n' + '<|assistant|>' + '\n'}}{% elif (message['role'] == 'assistant') %}{{message['content'] + '<|end|>' + '\n'}}{% endif %}{% endfor %}",
+  "bos_token": "<|endoftext|>",
+  "chat_template": "{% for message in messages %}{% if message['role'] == 'system' and 'tools' in message and message['tools'] is not none %}{{ '<|' + message['role'] + '|>' + message['content'] + '<|tool|>' + message['tools'] + '<|/tool|>' + '<|end|>' }}{% else %}{{ '<|' + message['role'] + '|>' + message['content'] + '<|end|>' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ '<|assistant|>' }}{% else %}{{ eos_token }}{% endif %}",
   "clean_up_tokenization_spaces": false,
   "eos_token": "<|endoftext|>",
-  "legacy": false,
-  "model_max_length": 4096,
+  "extra_special_tokens": {},
+  "model_max_length": 2048,
   "pad_token": "<|endoftext|>",
-  "padding_side": "left",
-  "sp_model_kwargs": {},
-  "tokenizer_class": "LlamaTokenizer",
-  "unk_token": "<unk>",
-  "use_default_system_prompt": false
+  "tokenizer_class": "GPT2Tokenizer",
+  "unk_token": "<|endoftext|>"
 }
