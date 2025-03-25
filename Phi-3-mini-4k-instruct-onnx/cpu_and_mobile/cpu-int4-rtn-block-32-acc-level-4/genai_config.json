@@ -39,7 +39,7 @@
         "do_sample": false,
         "early_stopping": true,
         "length_penalty": 1.0,
-        "max_length": 4096,
+        "max_length": 2048,
         "min_length": 0,
         "no_repeat_ngram_size": 0,
         "num_beams": 1,

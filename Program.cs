@@ -1,5 +1,6 @@
 ﻿using System;
 using Gtk;
+using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntimeGenAI;
 
 class Program
@@ -73,6 +74,9 @@ class Program
             modelPath = GetModelPath(comboBox.Active);
             try
             {
+                var sessionOptions = new SessionOptions();
+                sessionOptions.AppendExecutionProvider_DML(); // Enable DirectML
+                var inferenceSession = new InferenceSession(modelPath, sessionOptions);
                 model = new Model(modelPath);
                 tokenizer = new Tokenizer(model);
                 textView.Buffer.Text += $"Model switched to: CPU-powered Phi-3-mini\n";

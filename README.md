@@ -10,10 +10,9 @@ Uses:
 * [ONNX Runtime GenAI](https://github.com/microsoft/onnxruntime-genai)
 
 Supports:
-* Windows on x64
-* Windows on Arm via emulation, due to a limitation in GTK#
-* Linux on x64
-* Linux on Arm, requires building ONNX Runtime GenAI from source
+* Windows and Linux on x64
+* Windows on Arm only functions via emulation due to a limitation in GTK#
+* Linux on Arm requires building QNNX dependencies from source
 
 ## Download model and data:
 
